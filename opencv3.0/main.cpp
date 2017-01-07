@@ -225,4 +225,4 @@ int main()
 	simulation(map, show,param, 0, pid);
 	waitKey();
 }
-hello
+
