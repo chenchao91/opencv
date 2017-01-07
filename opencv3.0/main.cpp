@@ -17,14 +17,14 @@ struct PID {
 struct carparam {
 	float x;
 	float y;
-	float angle;//Ğ¡³µµÄÆğÊ¼Î»ÖÃºÍ½Ç¶È
+	float angle;//å°è½¦çš„èµ·å§‹ä½ç½®å’Œè§’åº¦
 	float height_b;
-	float width_b;//µ×ÅÌÉãÏñÍ·Ëù²É¼¯Í¼Æ¬µÄ¸ß¶ÈºÍ¿í¶È
+	float width_b;//åº•ç›˜æ‘„åƒå¤´æ‰€é‡‡é›†å›¾ç‰‡çš„é«˜åº¦å’Œå®½åº¦
 	float high_f;
 	float angle_f;
 	float height_f;
-	float width_f;//Ç°ÖÃÉãÏñÍ·Ëù²É¼¯Í¼Æ¬µÄ¸ß¶ÈºÍ¿í¶È
-	float frame;//Ö¡ÂÊ
+	float width_f;//å‰ç½®æ‘„åƒå¤´æ‰€é‡‡é›†å›¾ç‰‡çš„é«˜åº¦å’Œå®½åº¦
+	float frame;//å¸§ç‡
 };
 struct carstate {  
 	float x;
@@ -162,7 +162,7 @@ void camera_button(Mat &map,Mat &show, carparam &param)
 
 }
 
-void simulation(Mat &map,Mat &show ,carparam &param, float t, PID pid)//t±íÊ¾Ê±ÑÓ
+void simulation(Mat &map,Mat &show ,carparam &param, float t, PID pid)//tè¡¨ç¤ºæ—¶å»¶
 {
 	//carstate car;
 	car.x = param.x;
@@ -199,13 +199,13 @@ int main()
 	cvtColor(show, map, CV_BGR2GRAY);
 	//carparam param;
 	{
-		param.x = 76;//ÏñËØÎªµ¥Î»
+		param.x = 76;//åƒç´ ä¸ºå•ä½
 		param.y = 60;
-		param.angle = Pi / 2;//³µÍ·³¯×óÎªÕı90¶È£¬³¯ÉÏÎª0¶È¡£
+		param.angle = Pi / 2;//è½¦å¤´æœå·¦ä¸ºæ­£90åº¦ï¼Œæœä¸Šä¸º0åº¦ã€‚
 		param.height_b = 60;
 		param.width_b = 80; 
 		param.angle_f = Pi / 4;
-		param.high_f = 90;//Ç°ÖÃÉãÏñÍ·µÄ½Ç¶ÈºÍ¸ß¶È£¬ÕâÀï·ÂÕæÊ±ÒÔÏñËØÎªµ¥Î»
+		param.high_f = 90;//å‰ç½®æ‘„åƒå¤´çš„è§’åº¦å’Œé«˜åº¦ï¼Œè¿™é‡Œä»¿çœŸæ—¶ä»¥åƒç´ ä¸ºå•ä½
 		param.height_f = 60;
 		param.width_f = 80;
 		param.frame = 30;
@@ -224,4 +224,4 @@ int main()
 	imshow("show", show);
 	simulation(map, show,param, 0, pid);
 	waitKey();
-}
+}hello
