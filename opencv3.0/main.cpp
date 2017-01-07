@@ -26,7 +26,7 @@ struct carparam {
 	float width_f;//前置摄像头所采集图片的高度和宽度
 	float frame;//帧率
 };
-struct carstate {
+struct carstate {  
 	float x;
 	float y;
 	float angle;     
