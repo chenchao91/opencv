@@ -224,6 +224,5 @@ int main()
 	imshow("show", show);
 	simulation(map, show,param, 0, pid);
 	waitKey();
-	cout << "this is dep" << endl;
 }
 
